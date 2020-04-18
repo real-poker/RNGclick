@@ -1,13 +1,13 @@
 from tkinter import Tk, Label, StringVar
+import random
 
 def _quit():
     root.quit()    
     root.destroy()                 
 
 def gen_rand(event):    
-    import random
-    
-    randvar = random.randint(0,100)  
+     
+    randvar = random.randint(1,100)  
     tout.set(randvar) 
     
     if randvar < 25:
