@@ -17,14 +17,21 @@ def gen_rand(event):
     elif randvar < 75:
         label.config(fg='#FFFF33')
     else:
-        label.config(fg='#33FF39')
-            
+        label.config(fg='#33FF39') 
+		
     return 
+ 
+def clear_rand(event):
+ 
+	tout.set("")
+	
+	return
  
 root = Tk()
 root.title('RNG')
 root.configure(background='black')
 root.bind('<Button-1>', gen_rand)
+root.bind('<Button-3>', clear_rand)
 tout = StringVar()
 label = Label(root, textvariable=tout, font=('TkDefaultFont', 100), bg='black')
 label.pack()
