@@ -2,8 +2,9 @@
 Random number generation program for playing online poker, left-click generates a new random number, right-click clears the window.
 
 Installation:
--Option 1 Download the .exe file and run it standalone
--Option 2 Download the .py file and use command "python RNGclick.py" from the command line, if python is installed on your computer
+Option 1: Download the .exe file and run it standalone
+
+Option 2: Download the .py file and use command "python RNGclick.py" from the command line, if python is installed on your computer
 
 Features:
 - Uses the cryptographically secure random number generator on your OS
