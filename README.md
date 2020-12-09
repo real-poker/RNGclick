@@ -11,6 +11,7 @@ Features:
 - Uses the cryptographically secure random number generator on your OS
 - Option to generate random integers from 0-99, or 1-100
 - Option to switch green = high roll, red = low roll colour spectrum to green = low roll, red = high roll
+- Option to increase/decrease the font size
 - Lightweight and resizable, so you can squeeze it anywhere on your desktop
 
 You can thank me by subscribing to my youtube where I cover equilibrium poker strategy using solvers, as well as keep up to date with free software I plan on releasing: [Real_ Poker Youtube Link](https://www.youtube.com/channel/UCKzZTKWLPCSLoheQHWsEP6g?sub_confirmation=1)
