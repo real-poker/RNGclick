@@ -2,39 +2,13 @@ import tkinter as tk
 import random
 import base64
 import os
+import tkinter.font as tkFont
 
-
-colorSwitch = True
+colorSwitch = False
+menuSwitch = True
 lowLim = 1
 hiLim = 100
 colours = ['#FF3333','#FFAC33','#FFFF33','#33FF39','#33FF39','#FFFF33','#FFAC33','#FF3333']
-
-def gen_rand(event):  
-    global colorSwitch, lowLim, hiLim, colours  
-    rng = random.SystemRandom()
-    randvar = rng.randint(lowLim, hiLim)
-    tout.set(randvar)    
-    val = randvar + 100*int(colorSwitch)
-    idx = (val - lowLim) // 25
-    label.config(fg=colours[idx])
-                             
-def clear_rand(event):
-	tout.set("")
-
-def cSwitch():
-    global colorSwitch
-    colorSwitch = not(colorSwitch)
-    
-def rng99():
-    global lowLim, hiLim
-    lowLim = 0
-    hiLim = 99
-    
-def rng100():
-    global lowLim, hiLim
-    lowLim = 1
-    hiLim = 100  
-
 logo = """
 AAABAAEAIyMAAAEAIABkFAAAFgAAACgAAAAjAAAARgAAAAEAIAAAAAAAJBMAAMMOAADDDgAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADqQ2/8AAAD/AAAA/wAAAP/bkDr/
@@ -129,6 +103,66 @@ AMAA///gAAAAwAD//+AAAADAAP//4AAAAMAAH//gAAAAwAAP/+AAAADAAAf/4AAAAMAEB//gAAAA
 wAQH/+AAAADABAf/4AAAAMAEB//gAAAAwAQH/+AAAADAAAf/4AAAAMAAB//gAAAAwAAP/+AAAADA
 AA//4AAAAMAAH//gAAAAwAAf/+AAAADAAP//4AAAAP8H///gAAAA/wf//+AAAAD/B///4AAAAA==
 """
+
+def gen_rand(event):  
+    global colorSwitch, lowLim, hiLim, colours  
+    rng = random.SystemRandom()
+    randvar = rng.randint(lowLim, hiLim)
+    tout.set(randvar)    
+    val = randvar + 100*int(colorSwitch)
+    idx = (val - lowLim) // 25
+    label.config(fg=colours[idx])
+                             
+def clear_rand(event):
+	tout.set("")
+
+def cSwitch():
+    global colorSwitch
+    colorSwitch = not(colorSwitch)
+    
+def rng99():
+    global lowLim, hiLim
+    lowLim = 0
+    hiLim = 99
+    
+def rng100():
+    global lowLim, hiLim
+    lowLim = 1
+    hiLim = 100  
+    
+def mSwitch(event):
+    global menuSwitch
+    if menuSwitch:        
+        root.config(menu=emptyMenu)
+        menuSwitch = not menuSwitch
+        winx = root.winfo_rootx() - 1
+        winy = root.winfo_rooty() + 19
+        winw = root.winfo_width()
+        winh = root.winfo_height() - 38
+        root.geometry(f'{winw}x{winh}')
+        root.geometry(f'+{winx}+{winy}')
+        root.overrideredirect(1)
+    else:
+        root.config(menu=menubar)
+        menuSwitch = not menuSwitch
+        winx = root.winfo_rootx() - 7
+        winy = root.winfo_rooty() - 50
+        winw = root.winfo_width()
+        winh = root.winfo_height() - 2
+        root.geometry(f'{winw}x{winh}')
+        root.geometry(f'+{winx}+{winy}')
+        root.overrideredirect(0)
+
+def decreaseFontSize():
+    fontsize = fontStyle['size']
+    label['text'] = fontsize - 15
+    fontStyle.config(size = fontsize - 15)
+    
+def increaseFontSize():
+    fontsize = fontStyle['size']
+    label['text'] = fontsize + 15
+    fontStyle.config(size = fontsize + 15)
+        
 icondata = base64.b64decode(logo)
 tempFile = "icon.ico"
 iconfile = open(tempFile,"wb")
@@ -139,22 +173,30 @@ root = tk.Tk()
 root.title('RNGClick')
 root.iconbitmap('icon.ico')
 
+emptyMenu = tk.Menu(root)
 menubar = tk.Menu(root)
 filemenu = tk.Menu(menubar, tearoff=0)
 filemenu.add_command(label="Switch Colour Order", command=cSwitch)
 filemenu.add_separator()
-filemenu.add_command(label="RNG from 0-99", command=rng99)
-filemenu.add_command(label="RNG from 1-100", command=rng100)
+filemenu.add_radiobutton(label="RNG from 0-99", command=rng99)
+filemenu.add_radiobutton(label="RNG from 1-100", command=rng100)
+filemenu.add_separator()
+filemenu.add_command(label="Increase Font Size", command=increaseFontSize)
+filemenu.add_command(label="Decrease Font Size", command=decreaseFontSize)
 menubar.add_cascade(label="Options", menu=filemenu)
 root.config(menu=menubar)
 
 root.configure(background='black')
 root.bind('<Button-1>', gen_rand)
 root.bind('<Button-3>', clear_rand)
+root.bind('<Double-Button-3>', mSwitch)
 tout = tk.StringVar()
-label = tk.Label(root, textvariable=tout, font=('Consolas', 100), bg='black')
-label.pack(side="top", fill="both")
+
+fontStyle = tkFont.Font(family='Consolas', size=80)
+label = tk.Label(root, textvariable=tout, font=fontStyle, bg='black')
+label.pack(expand='True', fill="both")
 
 os.remove(tempFile)
 root.geometry("260x200+200+200")
+root.wm_attributes("-topmost", 1)
 root.mainloop()
