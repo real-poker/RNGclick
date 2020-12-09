@@ -1,5 +1,5 @@
 # RNGclick
-Random number generation program for playing online poker, left-click generates a new random number, right-click clears the window.
+Random number generation program for playing online poker, left-click generates a new random number, right-click clears the window. Double right-click hides the menu and title bars and locks the position of the window.
 
 Installation:
 
