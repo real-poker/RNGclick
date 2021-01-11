@@ -14,8 +14,6 @@ Features:
 - Option to increase/decrease the font size
 - Lightweight and resizable, so you can squeeze it anywhere on your desktop
 
-You can thank me by subscribing to my youtube where I cover equilibrium poker strategy using solvers, as well as keep up to date with free software I plan on releasing: [Real_ Poker Youtube Link](https://www.youtube.com/channel/UCKzZTKWLPCSLoheQHWsEP6g?sub_confirmation=1)
-
 ![RNGClick](https://i.imgur.com/yYJDROw.png)
 ![RNGClick Options](https://i.imgur.com/JrLmhBq.png)
 ![RNGClick In Use MultiTabling](https://i.imgur.com/9BNPO7c.png)
