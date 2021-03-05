@@ -12,6 +12,7 @@ Features:
 - Option to generate random integers from 0-99, or 1-100
 - Option to switch green = high roll, red = low roll colour spectrum to green = low roll, red = high roll
 - Option to increase/decrease the font size
+- Option for RNG to trigger every 3 seconds, instead of on-click
 - Lightweight and resizable, so you can squeeze it anywhere on your desktop
 
 ![RNGClick](https://i.imgur.com/yYJDROw.png)
