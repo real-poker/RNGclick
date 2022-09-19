@@ -9,11 +9,9 @@ Option 2: [**Download**](https://github.com/real-poker/RNGclick/archive/master.z
 
 **Instructions**:
 
-**Left-click**: Generate new random number
-
-**Right-click**: Clear screen
-
-**Double right**-click: Toggle hide menubar
+- **Left-click**: Generate new random number
+- **Right-click**: Clear screen
+- **Double right-click**: Toggle hide menubar
 
 
 **Features**:
