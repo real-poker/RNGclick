@@ -1,13 +1,18 @@
 # RNGclick
 Random number generation program for playing online poker, left-click generates a new random number, right-click clears the window. Double right-click hides the menu and title bars and locks the position of the window.
 
-Installation:
+**Installation**:
 
-Option 1: Download the .exe file and run it standalone [Download](https://github.com/real-poker/RNGclick/raw/master/RNGclick.exe)
+Option 1: [**Download**](https://github.com/real-poker/RNGclick/raw/master/RNGclick.exe) the .exe file and run it standalone 
 
-Option 2: Download the .py file and use command "python RNGclick.py" from the command line, if python is installed on your computer [Download](https://github.com/real-poker/RNGclick/archive/master.zip)
+Option 2: [**Download**](https://github.com/real-poker/RNGclick/archive/master.zip) the .py file and use command "python RNGclick.py" from the command line, if python is installed on your computer [Download Link](https://github.com/real-poker/RNGclick/archive/master.zip)
 
-Features:
+**Instructions**:
+**Left-click**: Generate new random number
+**Right-click**: Clear screen
+**Double right**-click: Toggle hide menubar
+
+**Features**:
 - Uses the cryptographically secure random number generator on your OS
 - Option to generate random integers from 0-99, or 1-100
 - Option to switch green = high roll, red = low roll colour spectrum to green = low roll, red = high roll
