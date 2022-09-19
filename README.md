@@ -5,12 +5,16 @@ Random number generation program for playing online poker, left-click generates 
 
 Option 1: [**Download**](https://github.com/real-poker/RNGclick/raw/master/RNGclick.exe) the .exe file and run it standalone 
 
-Option 2: [**Download**](https://github.com/real-poker/RNGclick/archive/master.zip) the .py file and use command "python RNGclick.py" from the command line, if python is installed on your computer [Download Link](https://github.com/real-poker/RNGclick/archive/master.zip)
+Option 2: [**Download**](https://github.com/real-poker/RNGclick/archive/master.zip) the .py file and use command "python RNGclick.py" from the command line, if python is installed on your computer
 
 **Instructions**:
+
 **Left-click**: Generate new random number
+
 **Right-click**: Clear screen
+
 **Double right**-click: Toggle hide menubar
+
 
 **Features**:
 - Uses the cryptographically secure random number generator on your OS
