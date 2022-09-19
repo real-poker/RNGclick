@@ -1,1 +1,1 @@
-pyinstaller --onefile --icon="logo.ico" RNGclick.py
+pyinstaller --onefile -w --icon="logo.ico" RNGclick.py
